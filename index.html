@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canlı Akvaryum</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="auth-screen" class="auth-screen">
+      <div class="auth-panel">
+        <div class="auth-brand">
+          <span class="brand-mark"></span>
+          <div>
+            <p class="eyebrow">KİŞİSEL AKVARYUM</p>
+            <h1>Akvaryumuna giriş yap</h1>
+          </div>
+        </div>
+
+        <div class="auth-tabs" role="tablist" aria-label="Üyelik işlemi">
+          <button class="auth-tab active" type="button" data-auth-mode="login">Giriş Yap</button>
+          <button class="auth-tab" type="button" data-auth-mode="register">Üye Ol</button>
+        </div>
+
+        <form id="auth-form" class="auth-form">
+          <label for="auth-username">Kullanıcı Adı</label>
+          <input id="auth-username" type="text" minlength="3" maxlength="20" autocomplete="username" required />
+          <label for="auth-password">Şifre</label>
+          <input id="auth-password" type="password" minlength="4" maxlength="64" autocomplete="current-password" required />
+          <p id="auth-error" class="auth-error" role="alert"></p>
+          <button id="auth-submit" type="submit">Giriş Yap</button>
+        </form>
+      </div>
+    </section>
+
+    <div id="game-shell" class="game-shell is-hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div><strong>Akvaryum</strong><small>Tatlı su yaşam alanı</small></div>
+        </div>
+
+        <div class="account-bar">
+          <span id="user-initial" class="user-initial">A</span>
+          <div><small>AKVARYUM SAHİBİ</small><strong id="current-user">Kullanıcı</strong></div>
+          <button id="logout-button" class="logout-button" type="button" title="Oturumu kapat">Çıkış</button>
+        </div>
+
+        <div class="member-browser">
+          <label for="member-select">Diğer Akvaryumlar</label>
+          <div class="member-browser-row">
+            <select id="member-select" aria-label="Üye seç">
+              <option value="">Üye bulunamadı</option>
+            </select>
+            <button id="view-member-button" type="button">Gör</button>
+          </div>
+          <button id="return-own-button" class="return-own-button" type="button" hidden>Kendi Akvaryumuma Dön</button>
+        </div>
+
+        <form id="fish-form" class="fish-form">
+          <label for="fish-name">Balık Adı</label>
+          <input id="fish-name" type="text" maxlength="20" placeholder="örn. Nemo" required />
+          <label for="fish-type">Balık Türü</label>
+          <select id="fish-type">
+            <option value="goldfish">Japon Balığı</option>
+            <option value="angelfish">Melek Balığı</option>
+            <option value="betta">Beta</option>
+          </select>
+          <button type="submit">Balık Ekle</button>
+        </form>
+
+        <div class="actions">
+          <button id="feed-all" class="feed-all">Tüm Balıkları Yemle</button>
+        </div>
+
+        <div class="hud">
+          <div class="stat">
+            <span>Canlı Balıklar</span>
+            <strong id="fish-count">0</strong>
+          </div>
+          <div class="stat">
+            <span>En Büyük</span>
+            <strong id="largest-fish">0 cm</strong>
+          </div>
+          <div class="stat status-box">
+            <span>Akvaryum Durumu</span>
+            <strong id="status-text">Güzel</strong>
+          </div>
+        </div>
+      </aside>
+
+      <main class="aquarium-panel">
+        <div class="top-bar">
+          <div>
+            <p class="eyebrow">EV AKVARYUMU</p>
+            <h1 id="aquarium-title">Tatlı Su Akvaryumu</h1>
+          </div>
+          <div id="view-status" class="live-status"><span></span> Kendi akvaryumun</div>
+        </div>
+
+        <div id="aquarium" class="aquarium" aria-live="polite">
+          <div class="water-caustics"></div>
+          <div class="glass-reflection"></div>
+          <div class="suspended-particles"></div>
+          <div class="bubble bubble-1"></div>
+          <div class="bubble bubble-2"></div>
+          <div class="bubble bubble-3"></div>
+          <div class="bubble bubble-4"></div>
+          <div class="bubble bubble-5"></div>
+          <div class="bubble bubble-6"></div>
+          <div class="bubble bubble-7"></div>
+          <div class="cleaning-bubbles cleaning-bubbles-left" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="cleaning-bubbles cleaning-bubbles-right" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <img class="shell-cluster shell-left" src="assets/seashells.png" alt="Deniz kabukları" />
+          <img class="shell-cluster shell-right" src="assets/seashells.png" alt="" />
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
