@@ -12,8 +12,8 @@
         <div class="auth-brand">
           <span class="brand-mark"></span>
           <div>
-            <p class="eyebrow">KİŞİSEL AKVARYUM</p>
-            <h1>Akvaryumuna giriş yap</h1>
+            <p class="eyebrow">SINIF AKVARYUMU</p>
+            <h1>Öğretmen paneline giriş yap</h1>
           </div>
         </div>
 
@@ -37,14 +37,24 @@
       <aside class="sidebar">
         <div class="brand">
           <span class="brand-mark"></span>
-          <div><strong>Akvaryum</strong><small>Tatlı su yaşam alanı</small></div>
+          <div><strong>Sınıf Akvaryumu</strong><small>Her öğrenciye bir balık</small></div>
         </div>
 
         <div class="account-bar">
           <span id="user-initial" class="user-initial">A</span>
-          <div><small>AKVARYUM SAHİBİ</small><strong id="current-user">Kullanıcı</strong></div>
+          <div><small>ÖĞRETMEN</small><strong id="current-user">Kullanıcı</strong></div>
           <button id="logout-button" class="logout-button" type="button" title="Oturumu kapat">Çıkış</button>
         </div>
+
+        <form id="class-form" class="class-form">
+          <label for="class-select">Sınıf Seç</label>
+          <select id="class-select" aria-label="Sınıf seç"></select>
+          <label for="class-name">Yeni Sınıf</label>
+          <div class="class-form-row">
+            <input id="class-name" type="text" maxlength="24" placeholder="örn. 3/A" />
+            <button type="submit">Ekle</button>
+          </div>
+        </form>
 
         <div class="member-browser">
           <label for="member-select">Diğer Akvaryumlar</label>
@@ -58,32 +68,41 @@
         </div>
 
         <form id="fish-form" class="fish-form">
-          <label for="fish-name">Balık Adı</label>
-          <input id="fish-name" type="text" maxlength="20" placeholder="örn. Nemo" required />
+          <label for="fish-name">Öğrenci Adı</label>
+          <input id="fish-name" type="text" maxlength="20" placeholder="örn. Ayşe" required />
           <label for="fish-type">Balık Türü</label>
           <select id="fish-type">
             <option value="goldfish">Japon Balığı</option>
             <option value="angelfish">Melek Balığı</option>
             <option value="betta">Beta</option>
+            <option value="guppy">Lepistes</option>
           </select>
-          <button type="submit">Balık Ekle</button>
+          <button type="submit">Öğrenci Balığı Ekle</button>
         </form>
 
         <div class="actions">
-          <button id="feed-all" class="feed-all">Tüm Balıkları Yemle</button>
+          <button id="feed-all" class="feed-all">Bugünün Sınıf Yemini Ver</button>
         </div>
+
+        <section class="classroom-panel" aria-label="Sınıf takip listesi">
+          <div class="classroom-panel-title">
+            <span>Öğrenci Balıkları</span>
+            <strong id="class-goal">0/0</strong>
+          </div>
+          <div id="student-list" class="student-list"></div>
+        </section>
 
         <div class="hud">
           <div class="stat">
-            <span>Canlı Balıklar</span>
+            <span>Öğrenciler</span>
             <strong id="fish-count">0</strong>
           </div>
           <div class="stat">
-            <span>En Büyük</span>
+            <span>En Büyük Balık</span>
             <strong id="largest-fish">0 cm</strong>
           </div>
           <div class="stat status-box">
-            <span>Akvaryum Durumu</span>
+            <span>Sınıf Durumu</span>
             <strong id="status-text">Güzel</strong>
           </div>
         </div>
@@ -92,8 +111,8 @@
       <main class="aquarium-panel">
         <div class="top-bar">
           <div>
-            <p class="eyebrow">EV AKVARYUMU</p>
-            <h1 id="aquarium-title">Tatlı Su Akvaryumu</h1>
+            <p class="eyebrow">SINIF AKVARYUMU</p>
+            <h1 id="aquarium-title">Sınıf Akvaryumu</h1>
           </div>
           <div id="view-status" class="live-status"><span></span> Kendi akvaryumun</div>
         </div>
